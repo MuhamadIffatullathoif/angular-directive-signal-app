@@ -10,7 +10,7 @@ export class UsersService {
   private http = inject(HttpClient);
   private baseUrl: string = 'https://reqres.in/api/users';
 
-  getUserById(id: string): Observable<User> {
+  getUserById(id: number): Observable<User> {
     return this.http.get<SingleUserResponse>(`${this.baseUrl}/${id}`)
       .pipe(
         map(response => response.data),
